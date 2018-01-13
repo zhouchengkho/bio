@@ -11,3 +11,11 @@ router.get('/', function (req, res, next) {
     title: 'Bio',
   });
 });
+
+router.get('/projects', function(req, res) {
+  res.render('projects', {});
+})
+
+router.get('/contact', function(req, res) {
+  res.render('contact', {});
+})
