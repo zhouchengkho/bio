@@ -1,0 +1,38 @@
+<link href="https://cdn.quilljs.com/1.3.5/quill.snow.css" rel="stylesheet">
+
+<script src="//cdn.quilljs.com/1.3.5/quill.min.js"></script>
+
+
+<div class="content-wrap" style="padding-top: 50px">
+    <!--CONTENT-->
+    <div class="content">
+        <div class="container">
+            <section>
+                <div id="editor">
+                    <p>Hello World!</p>
+                    <p>Some initial <strong>bold</strong> text</p>
+                    <p><br></p>
+                </div>
+            </section>
+        </div>
+        <div>
+            <button>lets go</button>
+        </div>
+
+
+        <!--/.CONTENT END-->
+    </div>
+    <!--/.CONTENT-WRAP END-->
+</div>
+
+
+
+
+
+
+
+<script>
+    var quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+</script>
