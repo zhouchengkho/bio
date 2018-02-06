@@ -8,9 +8,30 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Bio',
-  });
+  db.blog.findAll({
+    limit: 4,
+    order: 'updated_at desc'
+  }).then(function(result) {
+    var blogs = []
+    result.forEach(function(bigBlog) {
+      var smallBlog = {}
+      smallBlog.id = bigBlog.id;
+      smallBlog.time = bigBlog.updated_at.toString().substring(0, 10);
+      smallBlog.title = bigBlog.title;
+      smallBlog.abstract = bigBlog.abstract;
+      blogs.push(smallBlog)
+    })
+    console.log(blogs)
+    res.render('index', {
+      title: 'Bio',
+      blogs: JSON.parse(JSON.stringify(blogs)),
+      home: true
+    });
+  }).catch(function(err) {
+    res.render('index', {
+      title: 'Bio',
+    });})
+
 });
 
 router.get('/projects', function(req, res) {
@@ -25,7 +46,8 @@ router.get('/contact', function(req, res) {
 router.post('/blog', function(req, res) {
   var blog = {
     title: req.body.title,
-    text: req.body.text
+    text: req.body.text,
+    abstract: req.body.abstract
   }
 
   db.blog.create(blog).then(function(result) {

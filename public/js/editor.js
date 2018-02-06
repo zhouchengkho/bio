@@ -19,10 +19,11 @@ $(document).ready(function(){
 
     var data = {
       title: $('#title').val(),
+      abstract: $('#abstract').val(),
       text: editor.getData()
     }
 
-    if(!data.title || !data.text) {
+    if(!data.title || !data.text || !data.abstract) {
       alert('yo fill out the necessary field dude');
       return
     }

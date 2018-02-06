@@ -99,7 +99,7 @@
 
     //owl carousel
     $('.owl-carousel').owlCarousel({
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
+      autoPlay: 10000, //Set AutoPlay to 10 seconds
 
       items : 1,
       itemsDesktop : [1199,1],
@@ -113,7 +113,7 @@
     });
 
     $('.owl-carousel2').owlCarousel({
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
+      autoPlay: 10000, //Set AutoPlay to 10 seconds
 
       items : 1,
       itemsDesktop : [1199,1],
