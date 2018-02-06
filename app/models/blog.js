@@ -3,9 +3,8 @@
 
 module.exports = function (sequelize, DataTypes) {
 
-  var Article = sequelize.define('Article', {
+  var Blog = sequelize.define('blog', {
     title: DataTypes.STRING,
-    url: DataTypes.STRING,
     text: DataTypes.STRING
   }, {
     classMethods: {
@@ -13,9 +12,12 @@ module.exports = function (sequelize, DataTypes) {
         // example on how to add relations
         // Article.hasMany(models.Comments);
       }
-    }
+    },
+    freezeTableName: true,
+    tableName: 'blog',
+    timestamps: false
   });
 
-  return Article;
+  return Blog;
 };
 
