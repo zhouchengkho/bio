@@ -1,6 +1,7 @@
 var express = require('express'),
   router = express.Router(),
-  db = require('../models');
+  db = require('../models'),
+  helper = require('../utility/helper');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -26,23 +27,38 @@ router.post('/blog', function(req, res) {
     title: req.body.title,
     text: req.body.text
   }
-  db.Blog.create(blog, function(err, result) {
-    if(err) res.redirect('/error');
-    else {
-      res.redirect('/blog/'+blog.id);
-    }
+
+  db.blog.create(blog).then(function(result) {
+      res.status(200);
+      res.send(helper.genReponse(200, result));
+  }).catch(function(err) {
+    res.status(400);
+    res.send(helper.genReponse(400, err));
   })
 })
 
 
 router.get('/blog/editor', function(req, res) {
-  res.render('editor', {});
+  res.render('editor', {
+    header: '<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>',
+    script: '<script src="/js/editor.js" type="text/javascript"></script>'
+  });
 })
 
 
 
 router.get('/blog/:id', function(req, res) {
-  res.render('blog', {});
+  db.blog.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(blog) {
+    console.log(blog)
+    blog.text = blog.text.toString();
+    res.render('blog', JSON.parse(JSON.stringify(blog)))
+  }).catch(function(err) {
+    res.render('blog', {id: 0, title: "this blog doesn't exist", text: ""})
+  })
 })
 
 router.get('/error', function(req, res) {

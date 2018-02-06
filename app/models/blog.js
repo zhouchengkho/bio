@@ -12,7 +12,10 @@ module.exports = function (sequelize, DataTypes) {
         // example on how to add relations
         // Article.hasMany(models.Comments);
       }
-    }
+    },
+    freezeTableName: true,
+    tableName: 'blog',
+    timestamps: false
   });
 
   return Blog;

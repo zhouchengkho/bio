@@ -28,7 +28,7 @@
       $(this).addClass('active');
 
       var target = this.hash;
-      $target = $(target);
+      // $target = $(target);
       $('html, body').stop().animate({
         'scrollTop': $target.offset().top+2
       }, 500, 'swing', function () {
@@ -120,7 +120,7 @@
       itemsDesktopSmall : [979,1],
       itemsTablet : [768,1],
       itemsMobile : [479,1],
-      autoPlay : false,
+      // autoPlay : false,
 
       // CSS Styles
       baseClass : "owl-carousel",
@@ -185,7 +185,7 @@
     $('.menu-list a').each(function () {
       var currentLink = $(this);
       var refElement = $(currentLink.attr("href"));
-      if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+      if (refElement.position() <= scrollPosition && refElement.position() + refElement.height() > scrollPosition) {
         $('.menu-list a').removeClass("active");
         currentLink.addClass("active");
       }

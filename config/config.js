@@ -13,6 +13,14 @@ var config = {
       database: 'bio',
       username: 'root',
       password: '123456',
+      options: {
+        // define: {
+        //   timestamps: false // db doesn't use timestamps
+        // },
+        // logging: function(e){
+        //   return debug("info" , "SQL" , e);
+        // }
+      }
     }
   },
 
@@ -26,6 +34,14 @@ var config = {
       database: 'bio',
       username: 'root',
       password: '123456',
+      options: {
+        // define: {
+        //   timestamps: false // db doesn't use timestamps
+        // },
+        // logging: function(e){
+        //   return debug("info" , "SQL" , e);
+        // }
+      }
     }
   },
 
@@ -39,6 +55,14 @@ var config = {
       database: 'bio',
       username: 'root',
       password: '123456',
+      options: {
+        // define: {
+        //   timestamps: false // db doesn't use timestamps
+        // },
+        // logging: function(e){
+        //   return debug("info" , "SQL" , e);
+        // }
+      }
     }
   }
 };
