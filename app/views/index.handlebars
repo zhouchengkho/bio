@@ -101,6 +101,59 @@
         </section>
         <!--/.ABOUT END-->
 
+        <!-- BLOG -->
+        <section class="grey-bg" id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="title-small">
+                            <span>Blog</span>
+                        </h3>
+                        <p class="content-detail">
+                            I will try to write some blogs about what I learnt recently, if I haven't written in a while
+                            send me an email to stop me from being lazy lol, click title to read more
+                        </p>
+                    </div>
+                    <div class="col-md-9 content-right">
+                        <div class="row">
+                            <ul class="listing-item">
+
+                              {{#each blogs}}
+                                  <li>
+                                      <div class="col-md-6 col-sm-6">
+                                          <div class="wrap-card">
+                                              <div class="card">
+                                                  <h2 class="year">
+                                                    {{time}}
+                                                  </h2>
+                                                  <p class="job">
+                                                    {{#if href}}
+                                                        <a href="{{href}}" style="color: blue" target="_blank">{{title}}</a>
+                                                    {{else}}
+                                                        <a href="/blog/{{id}}" style="color: blue" target="_blank">{{title}}</a>
+                                                    {{/if}}
+                                                  </p>
+                                                  <hr>
+                                                  <div class="text-detail">
+                                                      <p>{{abstract}}</p>
+                                                  </div>
+
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                              {{/each}}
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END OF BLOG -->
+
+
         <!--EDUCATION-->
         <section class="grey-bg" id="education">
             <div class="container">
@@ -184,7 +237,6 @@
             </div>
         </section>
         <!--/.EDUCATION END-->
-
 
         <!--EMPLOYEMENT-->
         <section class="grey-bg" id="employement">
@@ -436,55 +488,7 @@
         </section>
         <!--/.PROJECT END-->
 
-        <!-- BLOG -->
-        <section class="grey-bg" id="blog">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h3 class="title-small">
-                            <span>Blog</span>
-                        </h3>
-                        <p class="content-detail">
-                            I will try to write some blogs about what I learnt recently, if I haven't written in a while
-                            send me an email to stop me from being lazy lol, click title to read more
-                        </p>
-                    </div>
-                    <div class="col-md-9 content-right">
-                        <div class="row">
-                        <ul class="listing-item">
 
-                          {{#each blogs}}
-                                  <li>
-                                      <div class="col-md-6 col-sm-6">
-                                          <div class="wrap-card">
-                                              <div class="card">
-                                                  <h2 class="year">
-                                                      {{time}}
-                                                  </h2>
-                                                  <p class="job">
-                                                      <a href="/blog/{{id}}" style="color: blue">{{title}}</a>
-                                                  </p>
-
-                                                  <hr>
-                                                  <div class="text-detail">
-                                                      <p>{{abstract}}</p>
-                                                  </div>
-
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </li>
-                          {{/each}}
-                        </ul>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- END OF BLOG -->
         <!--WORK-->
         <!--<section class="grey-bg mar-tm-10" id="work">-->
         <!--<div class="container">-->
