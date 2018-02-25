@@ -7,6 +7,7 @@ module.exports = function (sequelize, DataTypes) {
     title: DataTypes.STRING,
     text: DataTypes.STRING,
     abstract: DataTypes.STRING,
+    href: DataTypes.STRING,
     created_at: DataTypes.DATE,
     updated_at: DataTypes.DATE
   }, {
