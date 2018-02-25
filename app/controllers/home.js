@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
       smallBlog.time = bigBlog.updated_at.toString().substring(0, 10);
       smallBlog.title = bigBlog.title;
       smallBlog.abstract = bigBlog.abstract;
+      smallBlog.href = bigBlog.href ? bigBlog.href : '/blog/'+bigBlog.id;
       blogs.push(smallBlog)
     })
     console.log(blogs)
