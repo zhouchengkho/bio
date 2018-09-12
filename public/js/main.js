@@ -16,7 +16,7 @@
   $(document).ready(function(){
 
     //active menu
-    $(document).on("scroll", onScroll);
+    // $(document).on("scroll", onScroll);
 
     $('a[href^="#"]').on('click', function (e) {
       e.preventDefault();
@@ -33,7 +33,7 @@
         'scrollTop': $target.offset().top+2
       }, 500, 'swing', function () {
         window.location.hash = target;
-        $(document).on("scroll", onScroll);
+        // $(document).on("scroll", onScroll);
       });
     });
 
